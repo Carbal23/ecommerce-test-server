@@ -1,9 +1,9 @@
 import { Router } from "express";
-import { uploadImages } from "../controllers/imagesController.js";
 import authMiddleware from "../middlewares/auth.js";
+import { uploadImagesToCloudinary } from "../controllers/uploadCloudinaryController.js";
 
 const router = Router();
 
-router.post("/", authMiddleware, uploadImages);
+router.post("/", authMiddleware, uploadImagesToCloudinary);
 
 export default router;

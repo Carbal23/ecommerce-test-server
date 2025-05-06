@@ -12,9 +12,14 @@ export const createProduct = async (req, res, next) => {
       images = [],
     } = req.body;
 
-    const mappedImages = images.map((filename) => ({
-      url: `/uploads/images/${filename}`,
-      alt: filename,
+    // const mappedImages = images.map((filename) => ({
+    //   url: `/uploads/images/${filename}`,
+    //   alt: filename,
+    // }));
+
+    const mappedImages = images.map((image) => ({
+      url: image,
+      alt: title,
     }));
 
     const product = new Product({

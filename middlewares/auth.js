@@ -20,7 +20,6 @@ const authMiddleware = (req, res, next)=>{
 
   } catch (error) {
     console.log("token no valido");
-    // res.status(401).json({ error: "Token no válido" });
     return next();
   }
 }
